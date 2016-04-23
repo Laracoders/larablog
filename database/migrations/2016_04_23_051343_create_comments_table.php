@@ -18,6 +18,8 @@ class CreateCommentsTable extends Migration
             $table->string('content');
             $table->string('name');
             $table->string('email');
+
+            $table->unsignedInteger('post_id');
         });
     }
 

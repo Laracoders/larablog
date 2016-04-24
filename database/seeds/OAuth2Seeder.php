@@ -27,16 +27,6 @@ class OAuth2Seeder extends Seeder
      */
     public function run()
     {
-        $admin = User::create([
-            'email' => 'admin@larablog.com',
-            'password' => '12345678',
-            'verified' => true
-        ]);
-        $role = app()->make(RoleRepository::class)->findRole('admin');
-        $admin->attachRole($role);
-
-        // Clients
         $this->authClient->create("AdminPanel", "1", "1");
-        
     }
 }

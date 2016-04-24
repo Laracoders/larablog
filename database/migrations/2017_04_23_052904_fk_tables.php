@@ -39,7 +39,6 @@ class FkTables extends Migration
         Schema::table('posts', function(Blueprint $table){
             $table->dropForeign('posts_author_id_foreign');
             $table->dropForeign('posts_category_id_foreign');
-            $table->dropForeign('posts_comment_id_foreign');
         });
         Schema::table('authors', function(Blueprint $table){
             // drop the field user_id

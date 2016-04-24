@@ -29,13 +29,13 @@ class RolesSeeder extends Seeder
      */
     public function run()
     {
-        $this->createRole('author', 'Author', [
+        $this->createRole('author', [
             'resource:post',
             'profile.show',
             'profile.update'
         ]);
 
-        $this->createRole('editor', 'Editor', [
+        $this->createRole('editor', [
             'resource:post',
             'resource:tag',
             'resource:category',
@@ -43,7 +43,7 @@ class RolesSeeder extends Seeder
             'profile.update'
         ]);
 
-        $this->createRole('admin', 'Administrator', [
+        $this->createRole('admin', [
             'resource:nota',
             'resource:comment',
             'resource:empresa',
@@ -60,10 +60,10 @@ class RolesSeeder extends Seeder
      * @param $readableName
      * @param array $permissionsNames
      */
-    protected function createRole($roleName, $readableName, array $permissionsNames)
+    protected function createRole($roleName, array $permissionsNames)
     {
         //Create the role
-        $role = $this->roleRepo->createRole($roleName, $readableName);
+        $role = $this->roleRepo->createRole($roleName);
 
         $permissionsNames = $this->expandResourcePermissions($permissionsNames);
 

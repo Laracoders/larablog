@@ -18,6 +18,14 @@ class DatabaseSeeder extends Seeder
         $this->call(RolesSeeder::class);
         $this->call(OAuth2Seeder::class);
 
+        if(config('app.debug')){
+            $this->call(UsersSeeder::class);
+            $this->call(CategoriesSeeder::class);
+            $this->call(TagsSeeder::class);
+            $this->call(PostsSeeder::class);
+            $this->call(CommentsSeeder::class);
+        }
+
         Model::reguard();
     }
 }

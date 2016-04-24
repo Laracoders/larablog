@@ -14,12 +14,11 @@ class RoleRepository extends BaseRepository implements RoleRepositoryContract
      * Create a role given a name
      *
      * @param $name
-     * @param $readableName
      * @return mixed
      */
-    public function createRole($name, $readableName)
+    public function createRole($name)
     {
-        return $this->create(['name' => $name, 'readable_name' => $readableName]);
+        return $this->create(['name' => $name]);
     }
 
     /**

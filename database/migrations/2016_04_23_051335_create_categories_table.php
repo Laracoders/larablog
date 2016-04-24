@@ -25,6 +25,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('models_categories');
+        Schema::drop('categories');
     }
 }

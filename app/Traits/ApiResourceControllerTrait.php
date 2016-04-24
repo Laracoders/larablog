@@ -2,14 +2,11 @@
 
 namespace App\Traits;
 
-use App\Services\ControllerHelpers;
-use App\Traits\ApiControllerHelpers;
-use App\Traits\DynamicQueryTrait;
 use Illuminate\Http\Request;
 
 trait ApiResourceControllerTrait
 {
-    use DynamicQueryTrait, ApiControllerHelpers, ControllerHelpers;
+    use DynamicQueryTrait, ApiControllerHelpers;
 
     /**
      * @var \App\Repositories\Contracts\BaseRepository
@@ -97,7 +94,7 @@ trait ApiResourceControllerTrait
             $id = explode(',', $id);
         }
 
-        $result = $this->repository->destroyById($id);
+        $result = $this->repository->deleteById($id);
 
         return $this->respondJson($result);
     }

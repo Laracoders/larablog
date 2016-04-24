@@ -2,7 +2,6 @@
 
 namespace App\Traits;
 
-
 use App\Repositories\Contracts\BaseRepository;
 use App\Repositories\Eloquent\Queries\DynamicQueryCriteria;
 

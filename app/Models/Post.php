@@ -3,14 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use phpDocumentor\Reflection\DocBlock\Tag;
 
 class Post extends Model
 {
     protected $table = 'posts';
     
-    protected $fillable = ['title','description','content','author_id','category_id'];
-
+    protected $fillable = [
+        'title',
+        'description',
+        'content',
+        'author_id',
+        'category_id'
+    ];
 
     public function image()
     {

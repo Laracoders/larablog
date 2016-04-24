@@ -7,7 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Author extends Model
 {
     protected $table = 'authors';
-    protected $fillable = ['name','work','user_id'];
+    
+    protected $fillable = [
+        'name',
+        'work',
+        'user_id'
+    ];
+    
     public $timestamps = false;
 
     public function user()
